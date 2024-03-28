@@ -1,112 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Birthday Color and Vegetable</title>
-    <style>
-      body {
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Color and Vegetable</title>
+<style>
+    body {
         font-family: Arial, sans-serif;
         text-align: center;
-      }
-      input[type="text"] {
-        padding: 8px;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        margin-top: 50px;
+        color: #333;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    label {
+        font-size: 18px;
+        color: #555;
+        display: block;
+        margin-top: 20px;
+    }
+    input[type="text"] {
+        padding: 12px;
         margin: 10px;
-      }
-      button {
-        padding: 10px 20px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+    button {
+        padding: 15px 30px;
         background-color: #007bff;
         color: #fff;
         border: none;
         cursor: pointer;
-      }
-      button:hover {
+        font-size: 18px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
         background-color: #0056b3;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Find Your Birthday Color and Vegetable</h2>
+    }
+    #output {
+        font-size: 20px;
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    #output.show {
+        transform: translateY(0);
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .fade-in {
+        animation: fadeIn 0.5s ease forwards;
+    }
+</style>
+</head>
+<body>
 
-    <label for="birthday">Enter Your Birthday (DD/MM):</label>
-    <input type="text" id="birthday" placeholder="DD/MM" maxlength="5" />
-    <button onclick="findColorAndVegetable()">Find</button>
+<h2>Find Your Birthday Color and Vegetable</h2>
 
-    <p id="output"></p>
+<label for="birthday">Enter Your Birthday (DD/MM):</label>
+<input type="text" id="birthday" placeholder="DD/MM" maxlength="5">
+<button onclick="findColorAndVegetable()">Find</button>
 
-    <script>
-      function findColorAndVegetable() {
-        const colors = [
-          "Red",
-          "Orange",
-          "Yellow",
-          "Green",
-          "Blue",
-          "Indigo",
-          "Violet",
-          "Purple",
-          "Pink",
-          "Turquoise",
-          "Magenta",
-          "Lavender",
-          "Crimson",
-          "Maroon",
-          "Olive",
-          "Teal",
-          "Cyan",
-          "Navy",
-          "Sky Blue",
-          "Aquamarine",
-          "Tan",
-          "Beige",
-          "Khaki",
-          "Mauve",
-          "Peach",
-          "Slate Gray",
-          "Silver",
-          "Gold",
-          "Plum",
-          "Brown",
-          "Black",
-        ];
-        const vegetables = [
-          "Carrot",
-          "Broccoli",
-          "Spinach",
-          "Lettuce",
-          "Cabbage",
-          "Tomato",
-          "Potato",
-          "Cucumber",
-          "Pepper",
-          "Onion",
-          "Garlic",
-          "Pumpkin",
-        ];
+<p id="output" class="fade-in"></p>
+
+<script>
+    function findColorAndVegetable() {
+        const colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "Purple", "Pink", "Turquoise", "Magenta", "Lavender", "Crimson", "Maroon", "Olive", "Teal", "Cyan", "Navy", "Sky Blue", "Aquamarine", "Tan", "Beige", "Khaki", "Mauve", "Peach", "Slate Gray", "Silver", "Gold", "Plum", "Brown", "Black"];
+        const vegetables = ["Carrot", "Broccoli", "Spinach", "Lettuce", "Cabbage", "Tomato", "Potato", "Cucumber", "Pepper", "Onion", "Garlic", "Pumpkin"];
 
         const input = document.getElementById("birthday").value;
         const birthday = input.split("/");
         const day = parseInt(birthday[0]);
         const month = parseInt(birthday[1]);
 
-        if (
-          isNaN(day) ||
-          isNaN(month) ||
-          day < 1 ||
-          day > 31 ||
-          month < 1 ||
-          month > 12
-        ) {
-          document.getElementById("output").innerText =
-            "Invalid date. Please enter a valid date (DD/MM).";
+        if (isNaN(day) || isNaN(month) || day < 1 || day > 31 || month < 1 || month > 12) {
+            showError("Invalid date. Please enter a valid date (DD/MM).");
         } else {
-          const color = colors[day - 1];
-          const vegetable = vegetables[month - 1];
-          document.getElementById(
-            "output"
-          ).innerText = `You are ${color} - ${vegetable}`;
+            const color = colors[day - 1];
+            const vegetable = vegetables[month - 1];
+            showResult(`You are <span style="color:${color.toLowerCase()}">${color}</span> - ${vegetable}`);
         }
-      }
-    </script>
-  </body>
+    }
+
+    function showError(message) {
+        const output = document.getElementById("output");
+        output.innerHTML = message;
+        output.classList.remove("show");
+        output.classList.add("fade-in");
+    }
+
+    function showResult(message) {
+        const output = document.getElementById("output");
+        output.innerHTML = message;
+        output.classList.add("show");
+        output.classList.remove("fade-in");
+    }
+</script>
+
+</body>
 </html>
