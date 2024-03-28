@@ -65,7 +65,7 @@ function findColorAndVegetable() {
     const color = colors[day - 1];
     const vegetable = vegetables[month - 1];
     showResult(
-      `You are <span style="color:${color.toLowerCase()}">${color}</span> - ${vegetable}`
+      `<span style="color:${color.toLowerCase()}">${color}</span> - ${vegetable}`
     );
   }
 }
