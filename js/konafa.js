@@ -1,5 +1,5 @@
 function findColorAndVegetable() {
-  const colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "Purple", "Pink", "Turquoise", "Magenta", "Lavender", "Crimson", "Maroon", "Olive", "Teal", "Cyan", "Navy", "Sky Blue", "Aquamarine", "Tan", "Beige", "Khaki", "Mauve", "Peach", "Slate Gray", "Silver", "Gold", "Plum", "Brown", "Black"];
+  const colors = ["متشنكحه", "متغرقة", "متدلعة", "متحزمة", "متبعترة", "مسخسخة", "مزفلطة", "مفرهدة", "ملظلظة", "مدروخة", "منحنجه", "متنكده", "مهبطة", "متمرمطة", "Olive", "Teal", "Cyan", "Navy", "Sky Blue", "Aquamarine", "Tan", "Beige", "Khaki", "Mauve", "Peach", "Slate Gray", "Silver", "Gold", "Plum", "Brown", "Black"];
   const vegetables = ["Carrot", "Broccoli", "Spinach", "Lettuce", "Cabbage", "Tomato", "Potato", "Cucumber", "Pepper", "Onion", "Garlic", "Pumpkin"];
 
   const input = document.getElementById("birthday").value;
