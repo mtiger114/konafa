@@ -10,7 +10,7 @@ body {
   overflow: hidden;
 }
 .lay {
-  background-color: #000;
+  background-color: #da9c32;
   opacity: 0.4;
   position: absolute;
   top: 0;
@@ -64,7 +64,7 @@ input[type="text"]:focus {
 }
 button {
   padding: 15px 30px;
-  background-color: #007bff;
+  background-color: #da9c32;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -73,7 +73,7 @@ button {
   transition: background-color 0.3s ease;
 }
 button:hover {
-  background-color: #0056b3;
+  background-color: #c9bf03;
 }
 #output {
   font-size: 20px;
