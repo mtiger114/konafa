@@ -84,16 +84,3 @@ function showResult(message) {
   output.classList.remove("fade-in");
 }
 
-document
-  .getElementById("randomizeButton")
-  .addEventListener("click", function () {
-    var images = document.querySelectorAll("#imageContainer img");
-
-    images.forEach(function (img) {
-      var randomX = Math.floor(Math.random() * window.innerWidth);
-      var randomY = Math.floor(Math.random() * window.innerHeight);
-
-      img.style.left = randomX + "px";
-      img.style.top = randomY + "px";
-    });
-  });
