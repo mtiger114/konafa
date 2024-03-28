@@ -2,16 +2,16 @@ body {
   direction: rtl;
   font-family: "Lemonada", sans-serif;
   text-align: center;
-  /* background-color: #f5f5f5; */
-  background-image: url("../imgs/cake.jpg");
-  background-size: 1400px;
+  background-image: url("../imgs/sweetss.jpg");
+  background-size: cover;
+  /* background-position-y: 1000px; */
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 .lay {
   background-color: #da9c32;
-  opacity: 0.4;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   width: 100%;
@@ -49,10 +49,12 @@ label {
   margin-top: 20px;
 }
 input[type="text"] {
+  font-family: "Lemonada", sans-serif;
+  font-size: 16px;
+  font-size: 14px;
   padding: 12px;
   margin: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
+  border: 2px solid #da9c32;
   border-radius: 5px;
   transition: border-color 0.3s ease;
   text-align: center;
@@ -60,20 +62,22 @@ input[type="text"] {
 }
 input[type="text"]:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #ffce79;
 }
 button {
+  font-family: "Lemonada", sans-serif;
   padding: 15px 30px;
-  background-color: #da9c32;
-  color: #fff;
+  background-color: #ffb330;
+  color: #333;
+  font-weight: bold;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 button:hover {
-  background-color: #c9bf03;
+  background-color: #da9c32;
 }
 #output {
   font-size: 20px;
