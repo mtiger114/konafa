@@ -87,6 +87,20 @@ button:hover {
 #output.show {
   transform: translateY(10px);
 }
+
+.baka img {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+}
+.baka :first-child {
+  left: 0;
+}
+.baka :last-child {
+  right: 0;
+}
+
+
 @keyframes show {
   from {
     top: 0%;
@@ -115,7 +129,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .container {
     width: 60%;
   }
@@ -124,5 +138,8 @@ button:hover {
   }
   h3 {
     font-size: 17px;
+  }
+  .baka {
+    display: none;
   }
 }
