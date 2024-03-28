@@ -82,10 +82,10 @@ button:hover {
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: 2s;
 }
 #output.show {
-  transform: translateY(0);
+  transform: translateY(10px);
 }
 @keyframes show {
   from {
