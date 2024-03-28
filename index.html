@@ -11,19 +11,48 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/konafa.css" />
+    <style>
+      img {
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
     <div class="lay"></div>
+    <div id="imageContainer" style="position: relative">
+      <img src="./imgs/cupc.png" alt="Image 1" style="display: none" />
+      <img src="./imgs/cake.png" alt="Image 2" style="display: none" />
+      <img src="./imgs/lemonc.png" alt="Image 3" style="display: none" />
+      <img src="./imgs/panc.png" alt="Image 4" style="display: none" />
+      <img src="./imgs/icec.png" alt="Image 5" style="display: none" />
+      <img src="./imgs/cocoac.png" alt="Image 6" style="display: none" />
+    </div>
     <div class="container">
-      <h2 >لو كنت كنافة</h2>
-      <h3 >اختار يوم ميلادك مع الشهر وشوف وانت كنافة هتبقا ايه</h3>
+      <h2>لو كنت كنافة</h2>
+      <h3>اختار يوم ميلادك مع الشهر وشوف وانت كنافة هتبقا ايه</h3>
       <div class="flexo">
         <label for="birthday">(يوم / شهر)</label>
         <input type="text" id="birthday" placeholder="يوم/شهر" maxlength="5" />
-        <button onclick="findColorAndVegetable()">وريني</button>
+        <button id="randomizeButton" onclick="showImages()">وريني</button>
       </div>
       <p id="output"></p>
     </div>
     <script src="./js/konafa.js"></script>
+    <script>
+      function showImages() {
+        var images = document.querySelectorAll("#imageContainer img");
+        images.forEach(function (img) {
+          img.style.display = "block";
+          var randomX = Math.floor(
+            Math.random() * (window.innerWidth - img.width)
+          );
+          var randomY = Math.floor(
+            Math.random() * (window.innerHeight - img.height)
+          );
+          img.style.left = randomX + "px";
+          img.style.top = randomY + "px";
+        });
+      }
+    </script>
   </body>
 </html>

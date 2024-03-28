@@ -126,3 +126,7 @@ button:hover {
     font-size: 17px;
   }
 }
+
+#imageContainer {
+  position: absolute;
+}
