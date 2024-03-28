@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Color and Vegetable</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      input[type="text"] {
+        padding: 8px;
+        margin: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find Your Birthday Color and Vegetable</h2>
+
+    <label for="birthday">Enter Your Birthday (DD/MM):</label>
+    <input type="text" id="birthday" placeholder="DD/MM" maxlength="5" />
+    <button onclick="findColorAndVegetable()">Find</button>
+
+    <p id="output"></p>
+
+    <script>
+      function findColorAndVegetable() {
+        const colors = [
+          "Red",
+          "Orange",
+          "Yellow",
+          "Green",
+          "Blue",
+          "Indigo",
+          "Violet",
+          "Purple",
+          "Pink",
+          "Turquoise",
+          "Magenta",
+          "Lavender",
+          "Crimson",
+          "Maroon",
+          "Olive",
+          "Teal",
+          "Cyan",
+          "Navy",
+          "Sky Blue",
+          "Aquamarine",
+          "Tan",
+          "Beige",
+          "Khaki",
+          "Mauve",
+          "Peach",
+          "Slate Gray",
+          "Silver",
+          "Gold",
+          "Plum",
+          "Brown",
+          "Black",
+        ];
+        const vegetables = [
+          "Carrot",
+          "Broccoli",
+          "Spinach",
+          "Lettuce",
+          "Cabbage",
+          "Tomato",
+          "Potato",
+          "Cucumber",
+          "Pepper",
+          "Onion",
+          "Garlic",
+          "Pumpkin",
+        ];
+
+        const input = document.getElementById("birthday").value;
+        const birthday = input.split("/");
+        const day = parseInt(birthday[0]);
+        const month = parseInt(birthday[1]);
+
+        if (
+          isNaN(day) ||
+          isNaN(month) ||
+          day < 1 ||
+          day > 31 ||
+          month < 1 ||
+          month > 12
+        ) {
+          document.getElementById("output").innerText =
+            "Invalid date. Please enter a valid date (DD/MM).";
+        } else {
+          const color = colors[day - 1];
+          const vegetable = vegetables[month - 1];
+          document.getElementById(
+            "output"
+          ).innerText = `You are ${color} - ${vegetable}`;
+        }
+      }
+    </script>
+  </body>
+</html>
